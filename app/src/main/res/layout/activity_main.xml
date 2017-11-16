@@ -6,17 +6,18 @@
     android:orientation="vertical"
     tools:context="easyapps.com.servicesbehaviour.MainActivity">
 
-    <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start Service"
-        android:onClick="startServiceButton"/>
 
     <Button
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stop service"
-        android:onClick="stopServiceButton"/>
+        android:layout_marginTop="10dp"
+        android:onClick="startServiceButton"
+        android:text="Start Service" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="stopServiceButton"
+        android:text="Stop service" />
 </LinearLayout>
