@@ -38,4 +38,10 @@ Service needs to be registerd in the manifest file.
 -onDestroy() : this will be called if service is stopped from inside the service using stopself() or from outside using stopService(intent).
 -sometimes if works is heavy eg it takes more than 5 seconds ,in this case we make a new thread inside the onStartCommand() method
  and hand over the heavy work to runnable obj to pass into that thread. so heavy work is done is separate thread.
-
+--------------Intent Service----------------------------------
+so a normal service works on the UI/main thread unless we creates a separate thread in it and put our work in that separate thread.
+Intent Service makes this easy for us as it works by default on the separate thread ,so it save's us from all that extra work of creating and managing a separate thread our self.
+on other diffrence that it has to a normal thread is that, it will stop it self once the task is completed,a normal service don't stop
+it self until we explicitly tell it to.
+only onHandleIntent() method works on the separte thread,the rest of methods still works on the main thread.
+their is one confusion though ,if we exit the app before the Intent service completes its task then the intentService will destroy it self after completion but process of that app is not killed even though app is not alive and Servie is destroyed.
